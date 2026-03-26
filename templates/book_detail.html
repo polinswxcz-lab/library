@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ book.title }}</h1>
+
+<h3>{{ book.author }}</h3>
+
+<p>{{ book.year }}</p>
+
+<img src="{{ url_for('static', filename='images/' + book.image_url) }}" width="300">
+
+<p>{{ book.description }}</p>
+
+<br>
+
+<a href="/library">назад</a>
+
+{% endblock %}

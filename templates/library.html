@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>бібліотека</h1>
+
+<h2>додати книгу</h2>
+
+<form action="/add_book" method="post" enctype="multipart/form-data">
+
+<input type="text" name="title" placeholder="назва книги" required>
+
+<input type="text" name="author" placeholder="автор" required>
+
+<input type="text" name="year" placeholder="рік">
+
+<label class="file-upload">
+<input type="file" name="image">
+<span>вибрати файл</span>
+</label>
+
+<textarea name="description" placeholder="опис"></textarea>
+
+<button type="submit">додати</button>
+
+</form>
+
+<h2>список книг</h2>
+
+{% for book in books %}
+
+<div class="book">
+
+<h3>{{ book.title }}</h3>
+
+<p>{{ book.author }} ({{ book.year }})</p>
+
+<img src="{{ url_for('static', filename='images/' + book.image_url) }}" width="120">
+
+<br><br>
+
+<a href="/book/{{ book.id }}">детальніше</a>
+
+<a href="/delete/{{ book.id }}">видалити</a>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,41 @@
+body{
+    font-family: Arial;
+    margin: 0;
+}
+
+header{
+    background: #333;
+    padding: 15px;
+}
+
+header a{
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.container{
+    padding: 20px;
+}
+
+.book{
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.file-upload input{
+display:none;
+}
+
+.file-upload{
+background:#444;
+color:white;
+padding:8px 15px;
+cursor:pointer;
+display:inline-block;
+}
+
+.file-upload span{
+text-transform:lowercase;
+}
