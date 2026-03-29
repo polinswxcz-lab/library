@@ -49,7 +49,7 @@ def add_book():
     filename = image.filename
 
     if filename != "":
-        image.save(os.path.join('templates/images', filename))
+        image.save(os.path.join('static/images', filename))
 
     conn = get_db_connection()
 
